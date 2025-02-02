@@ -164,7 +164,6 @@
             color: #ff69b4;
             font-style: italic;
             text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
-            cursor: pointer;
         }
 
         .second-page {
@@ -193,9 +192,43 @@
             animation: pulse 2s infinite;
         }
 
+        .message-content p {
+            margin: 1.5rem 0;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            animation: slideIn 1s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .highlight {
+            color: #ff69b4;
+            font-weight: bold;
+            font-size: 1.4rem !important;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5) !important;
+        }
+
+        .special {
+            color: #87CEFA;
+            font-size: 1.3rem !important;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(135, 206, 250, 0.5) !important;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes pulse {
@@ -207,6 +240,28 @@
             display: block !important;
         }
 
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .flower {
+                font-size: 3rem;
+            }
+            
+            .moon {
+                font-size: 3rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -244,4 +299,171 @@
             <button class="btn btn-no" onclick="moveButton(this)">No 💔</button>
         </div>
 
-        <div id="playlist" onclick="goToAlbum()">💗
+        <div id="playlist">
+            💗 Nuestro albúm mi niña💗
+                <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%); /* Mantener el gradiente */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+        }
+        h1 {
+            color: #c2185b;
+            font-size: 2.5em;
+        }
+        .album-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: auto;
+        }
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .foto {
+            border: 5px solid #c2185b;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .foto:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Álbum de San Valentín 💕</h1>
+    <div class="album-container">
+        <div class="album" id="album">
+            <!-- Sección de imágenes -->
+            <div class="foto"><img src="https://i.imgur.com/0tmLeAc.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/5qMDoDf.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/12R3wIn.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/Z5AoVVX.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/mz5n3YS.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/O0Vakjj.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/8zHjYav.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/lYZjaex.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/H1v9uGg.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/XkvumrN.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/GcIDTsM.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/iexYPX9.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/yZc4YBe.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/6WYpVbt.jpeg"></div>
+            <div class="foto"><img src="https://i.imgur.com/Sks1kDB.jpeg"></div>
+        </div>
+    </div>
+    
+    <audio autoplay loop>
+        <source src="Billie Eilish - BIRDS OF A FEATHER  Lyrics  Español.mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    
+    <script>
+        // Frase dividida en 15 partes
+        const mensajes = [
+            "TE", "AMO", "AL", "INFINITO", "Y", "MÁS", "ALLÁ",
+            "MI", "PRINCESA", "PERFECTA", "EL", "AMOR", "DE", "MI", "VIDA"
+        ];
+        
+        // Seleccionar todas las imágenes
+        const fotos = document.querySelectorAll('.foto');
+
+        // Asignar evento a cada imagen
+        fotos.forEach((foto, index) => {
+            foto.addEventListener('click', () => {
+                alert(mensajes[index]); // Mostrar el mensaje correspondiente
+            });
+        });
+    </script>
+        </div>
+    </div>
+
+    <div class="container second-page" id="second-page">
+        <div class="love-message">
+            <h2 class="thank-you">❤️ Mi Amor ❤️</h2>
+            <div class="message-content">
+                <p>Gracias por ese "sí quiero ser tu San Valentín" de ti, mi princesita perfecta, es como recibir el regalo más hermoso que el universo podría darme.</p>
+                
+                <p>Mi niña linda, mi chiquita bonita, mi bella durmiente que, al despertar, ilumina todo mi mundo. Eres mi dormilona preciosa, mi reina divina, la razón por la que sonrío todos los días.</p>
+                
+                <p>Mi amor, mi felicidad, mi paz... Eres el todo que le da vida a mi corazón. ✨</p>
+                
+                <p>Mi niña sexy, la mamá de nuestros hijos, mi otra mitad que completa mi ser, la que me hace sentir el amor en su máxima expresión.</p>
+                
+                <p>Mi mami linda, mi cachetoncita guapa, mi colachon, mi sally, mi jessie... MI TODOOOOOO.</p>
+                
+                <p>No hay palabras suficientes para describir lo afortunado que me siento de tenerte a mi lado, porque por encima de todo, eres MIAAAAAAA, y eso es lo que me llena el alma de una felicidad infinita.</p>
+                
+                <p>Te amo más de lo que puedo decir o demostrar mami.</p>
+                
+                <p class="highlight">TE AMOOOOOOOOOOOOOOOOOOOOOOOO AL INFINITOOOOOO Y MAS ALLAAAA MAMI LINDA</p>
+                
+                <p class="special">DE AQUI A LA LUNA A PASITOS DE TORTUGA 🌙</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Crear estrellas aleatorias
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            const numberOfStars = 100;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function handleYes() {
+            document.getElementById('first-page').style.display = 'none';
+            document.getElementById('second-page').classList.add('visible');
+        }
+
+        function moveButton(btn) {
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'absolute';
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+
+        // Crear estrellas al cargar la página
+        createStars();
+    </script>
+</body>
+</html>
